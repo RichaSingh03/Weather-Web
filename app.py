@@ -14,7 +14,7 @@ def get_weather_data(api_key, city):
 def index():
     if request.method == 'POST':
         city = request.form['city']
-        api_key = "c6e69bb49acdf55dfb95838d9d9e7b17"
+        api_key = "your_key"
         weather_data = get_weather_data(api_key, city)
 
         if weather_data['cod'] == '404':
