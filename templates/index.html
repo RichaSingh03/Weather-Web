@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: #989494;
+        }
+
+        form {
+            margin-bottom: 50px;
+        }
+
+        h1 {
+           font-size: 10vb; 
+           color: #0a5819;
+        }
+        input {
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather App</h1>
+    <form method="POST">
+        <input type="text" name="city" placeholder="Enter a city name" required>
+        <input type="submit" value="Get Weather">
+    </form>
+
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+
+    {% if temperature %}
+        <h2>City: {{ city }}</h2>
+        <p>Temperature: {{ temperature }}°C</p>
+        <p>Description: {{ description }}</p>
+        <p>Humidity: {{ humidity }}%</p>
+        <p>Wind Speed: {{ wind_speed }} km/h</p>
+    {% endif %}
+</body>
+</html>
